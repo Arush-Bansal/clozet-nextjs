@@ -1,0 +1,36 @@
+
+> v6-clozet-next@0.1.0 build
+> next build
+
+▲ Next.js 16.1.1 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.1s
+  Running TypeScript ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/12) ...
+  Generating static pages using 15 workers (3/12) 
+  Generating static pages using 15 workers (6/12) 
+  Generating static pages using 15 workers (9/12) 
+✓ Generating static pages using 15 workers (12/12) in 979.6ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /[username]
+├ ○ /auth
+├ ƒ /blog/[slug]
+├ ○ /blogs
+├ ○ /dashboard
+├ ○ /dashboard/analytics
+├ ○ /dashboard/integrations
+├ ○ /dashboard/products
+├ ○ /dashboard/profile
+└ ○ /username
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
