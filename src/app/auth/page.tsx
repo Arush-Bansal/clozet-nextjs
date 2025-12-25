@@ -14,18 +14,25 @@ import { Mail, Lock, UserPlus, LogIn, Loader2 } from "lucide-react";
 export default function AuthPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (password !== confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
+
     setLoading(true);
     try {
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
         options: {
-          emailRedirectTo: `${window.location.origin}/auth`,
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
         },
       });
 
@@ -35,7 +42,10 @@ export default function AuthPage() {
         toast.success("Account created successfully!");
         router.push("/username");
       } else {
-        toast.success("Account created! You can now log in.");
+        toast.success("Account created! Please check your email to confirm your account.");
+        // Clear password fields for security/UX
+        setPassword("");
+        setConfirmPassword("");
       }
     } catch (error: any) {
       toast.error(error.message || "An error occurred during sign up");
@@ -172,6 +182,20 @@ export default function AuthPage() {
                         className="pl-10" 
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="confirm-password-signup">Confirm Password</Label>
+                    <div className="relative">
+                      <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                      <Input 
+                        id="confirm-password-signup" 
+                        type="password" 
+                        className="pl-10" 
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
                         required
                       />
                     </div>
