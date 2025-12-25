@@ -43,7 +43,7 @@ const Features = () => {
             Everything You Need to Sell
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We've built the tools so you can focus on what matters - curating amazing pre-loved fashion.
+            We&apos;ve built the tools so you can focus on what matters - curating amazing pre-loved fashion.
           </p>
         </div>
 

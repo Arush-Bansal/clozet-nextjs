@@ -47,8 +47,12 @@ export default function AuthPage() {
         setPassword("");
         setConfirmPassword("");
       }
-    } catch (error: any) {
-      toast.error(error.message || "An error occurred during sign up");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("An error occurred during sign up");
+      }
     } finally {
       setLoading(false);
     }
@@ -79,8 +83,12 @@ export default function AuthPage() {
       } else {
         router.push("/username");
       }
-    } catch (error: any) {
-      toast.error(error.message || "Invalid login credentials");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("Invalid login credentials");
+      }
     } finally {
       setLoading(false);
     }

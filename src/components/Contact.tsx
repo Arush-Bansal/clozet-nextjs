@@ -49,7 +49,7 @@ const Contact = () => {
               Have Questions?
             </h2>
             <p className="text-lg text-muted-foreground">
-              We're here to help. Reach out and we'll get back to you soon.
+              We&apos;re here to help. Reach out and we&apos;ll get back to you soon.
             </p>
           </div>
 

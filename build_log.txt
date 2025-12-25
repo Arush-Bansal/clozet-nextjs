@@ -1,0 +1,26 @@
+
+> v6-clozet-next@0.1.0 build
+> next build
+
+▲ Next.js 16.1.1 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.3s
+  Running TypeScript ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/13) ...
+⨯ useSearchParams() should be wrapped in a suspense boundary at page "/auth/callback". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at Q (C:\Users\Arush Bansal\OneDrive - IIT Delhi\Desktop\InstaLink\v6-clozet-next\.next\server\chunks\ssr\node_modules_next_920e7746._.js:2:2111)
+    at o (C:\Users\Arush Bansal\OneDrive - IIT Delhi\Desktop\InstaLink\v6-clozet-next\.next\server\chunks\ssr\node_modules_next_920e7746._.js:4:5284)
+    at h (C:\Users\Arush Bansal\OneDrive - IIT Delhi\Desktop\InstaLink\v6-clozet-next\.next\server\chunks\ssr\[root-of-the-server]__db3ead60._.js:1:2853)
+    at an (C:\Users\Arush Bansal\OneDrive - IIT Delhi\Desktop\InstaLink\v6-clozet-next\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:84360)
+    at ai (C:\Users\Arush Bansal\OneDrive - IIT Delhi\Desktop\InstaLink\v6-clozet-next\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:86179)
+    at al (C:\Users\Arush Bansal\OneDrive - IIT Delhi\Desktop\InstaLink\v6-clozet-next\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:107953)
+    at as (C:\Users\Arush Bansal\OneDrive - IIT Delhi\Desktop\InstaLink\v6-clozet-next\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:105368)
+    at aa (C:\Users\Arush Bansal\OneDrive - IIT Delhi\Desktop\InstaLink\v6-clozet-next\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:84712)
+    at ai (C:\Users\Arush Bansal\OneDrive - IIT Delhi\Desktop\InstaLink\v6-clozet-next\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:86228)
+    at ai (C:\Users\Arush Bansal\OneDrive - IIT Delhi\Desktop\InstaLink\v6-clozet-next\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:104708)
+Error occurred prerendering page "/auth/callback". Read more: https://nextjs.org/docs/messages/prerender-error
+Export encountered an error on /auth/callback/page: /auth/callback, exiting the build.
+⨯ Next.js build worker exited with code: 1 and signal: null

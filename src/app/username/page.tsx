@@ -17,14 +17,20 @@ export default function UsernameClaimPage() {
   const [username, setUsername] = useState("");
   const [instagram, setInstagram] = useState("");
   const router = useRouter();
-  const { profile, isLoading: profileLoading, claimUsername, isClaiming } = useProfile();
+  const { profile, claimUsername, isClaiming } = useProfile();
 
   useEffect(() => {
     if (profile) {
-      if (profile.username) setUsername(profile.username);
-      if (profile.instagram_username) setInstagram(profile.instagram_username);
+      if (profile.username && profile.username !== username) {
+        const u = profile.username; // Capture for closure
+        setTimeout(() => setUsername(u), 0);
+      }
+      if (profile.instagram_username && profile.instagram_username !== instagram) {
+        const i = profile.instagram_username; // Capture for closure
+        setTimeout(() => setInstagram(i), 0);
+      }
     }
-  }, [profile]);
+  }, [profile]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleClaim = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,8 +62,13 @@ export default function UsernameClaimPage() {
       });
 
       router.push("/dashboard");
-    } catch (error: any) {
+    } catch (error: unknown) {
       // Error is handled in mutation
+      if (error instanceof Error) {
+        console.error(error.message);
+      } else {
+        console.error("An unknown error occurred");
+      }
     }
   };
 
