@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   title: "clozet.life - Launch Your Thrift Store",
   description: "Turn your pre-loved fashion into a thriving business. Your own thrift store in one click.",
   icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
+    icon: "/icon.png?v=1",
+    apple: "/icon.png?v=1",
   },
 };
 
