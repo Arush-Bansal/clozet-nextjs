@@ -11,7 +11,7 @@ import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import ProductForm from "@/components/dashboard/ProductForm";
 import TagManager from "@/components/dashboard/TagManager";
 import PageHeader from "@/components/dashboard/PageHeader";
@@ -59,6 +59,7 @@ export default function ProductsPage() {
                 </Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[425px] rounded-3xl p-6">
+                <DialogTitle className="sr-only">Manage Tags</DialogTitle>
                 <TagManager />
               </DialogContent>
             </Dialog>
@@ -74,6 +75,9 @@ export default function ProductsPage() {
                 </Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[425px] rounded-3xl p-6">
+                <DialogTitle className="sr-only">
+                  {editingProduct ? "Edit Product" : "Add Product"}
+                </DialogTitle>
                 <ProductForm 
                   initialData={editingProduct}
                   onSuccess={() => {
@@ -102,7 +106,14 @@ export default function ProductsPage() {
             <CardDescription className="max-w-xs mt-2">
               Start adding pre-loved items to your store to start earning.
             </CardDescription>
-            <Button variant="outline" className="mt-6 rounded-xl">
+            <Button 
+              variant="outline" 
+              className="mt-6 rounded-xl"
+              onClick={() => {
+                setEditingProduct(null);
+                setIsDialogOpen(true);
+              }}
+            >
               Add Your First Product
             </Button>
           </CardContent>
